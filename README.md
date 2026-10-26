@@ -66,9 +66,13 @@ The example does not claim permanent storage, a generated image, or ownership of
 
 ### Evaluation and current limitations
 
-An initial real-platform test of the Lite instruction candidate in Alice AI surfaced a specific issue: the assistant introduced extra accessories beyond the constrained wardrobe scenario. That run did not validate the complete product or compatibility of both editions.
+**Updated 26 October 2026.** Engineering tests of portable Lite/Full instructions have now been conducted in Alice AI, GigaChat and DeepSeek with synthetic inputs. These are limited, version-specific tests, not proof of complete compatibility or a finished consumer product.
 
-The GigaChat attempt was blocked at the login step, so model behaviour there was not tested. User acceptance testing is currently paused. Internal same-context self-tests are recorded separately and are not independent target-platform validation.
+- **Alice AI / GigaChat:** earlier live text flows showed both useful behaviour and critical failures: extra accessories outside the confirmed wardrobe, incorrect save/consent handling, and errors in exported profile semantics. Some later narrow profile-transfer cases passed, but the full acceptance suite did not.
+- **DeepSeek:** a 26 October engineering run tested Lite and Full text interactions and a narrow profile restore. Some scenarios passed; Full still failed the strict wardrobe constraint and early visual reference requirements. A later UX revision also exposed repeated save prompts after refusal and overgeneralisation of style preferences.
+- **Local Python runtime:** automated tests passed for the isolated components, but they do not prove that a consumer AI chat can use those components or reliably process real clothing photographs.
+
+User acceptance testing and commercial launch remain paused. Results are recorded in the private engineering repository; the public showcase intentionally excludes personal data, commercial instructions and raw private testing material.
 
 Other important boundaries remain:
 
@@ -82,6 +86,10 @@ Other important boundaries remain:
 
 After the acceptance-testing pause is lifted: address the wardrobe-boundary issue, rerun the relevant scenario in a clean target session, and evaluate a complete flow with explicit evidence for each operation. Further work includes visual fidelity checks and longer conversations. A login-blocked service remains unverified until an authorised test can actually run.
 
-### Skills demonstrated
+### Responsibilities and skills demonstrated
 
-Product scoping, conversation design, consent and state modelling, capability-aware AI interaction, evaluation design, Python prototyping, SQLite data modelling, image composition and release hygiene. The case study distinguishes intended UX, implemented components and observed behaviour so a reviewer can assess each on its own evidence.
+**Anastasia Shilova — Product & Creative Lead:** product vision, problem framing, user journeys, conversational UX, feature requirements, creative direction, test acceptance criteria, prioritisation and feedback to engineering. The project is a demonstration of product ownership and cross-functional coordination.
+
+**AI-assisted engineering implementation:** portable prompt/Skill files, Python/SQLite/Pillow prototype, automated tests, packaging and technical documentation. These are project deliverables, not a claim that Anastasia personally coded every component.
+
+The case study separates product decisions, implemented components and observed model behaviour so reviewers can assess the evidence accurately.
